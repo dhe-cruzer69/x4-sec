@@ -1,18 +1,43 @@
 [project]
 name = "x4-sec"
 version = "0.1.0"
-description = "Security scanner for agent repos, skills, hooks, and MCP"
+description = "Security scanner for AI-agent projects, MCP servers, skills, and hooks"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "Apache-2.0" }
+authors = [{ name = "ARIEX4Ops" }]
+keywords = ["security", "mcp", "agent", "scanner", "sarif", "x4"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Security",
+]
 dependencies = []
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0", "ruff>=0.6"]
+dev = ["pytest>=8.0", "ruff>=0.6", "mypy>=1.10"]
 
 [project.scripts]
 x4-sec = "x4_sec.cli:main"
 
+[project.urls]
+Homepage = "https://github.com/dhe-cruzer69/x4-sec"
+Repository = "https://github.com/dhe-cruzer69/x4-sec"
+Issues = "https://github.com/dhe-cruzer69/x4-sec/issues"
+
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

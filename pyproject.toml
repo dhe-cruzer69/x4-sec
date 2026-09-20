@@ -1,0 +1,18 @@
+[project]
+name = "x4-sec"
+version = "0.1.0"
+description = "Security scanner for agent repos, skills, hooks, and MCP"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[project.scripts]
+x4-sec = "x4_sec.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
